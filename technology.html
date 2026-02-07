@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology - Antfrastructure</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .tech-hero {
+            padding: 150px 0 100px;
+            background: var(--color-dark-surface);
+            position: relative;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .tech-card {
+            background: linear-gradient(135deg, rgba(18, 25, 26, 0.9), rgba(26, 36, 37, 0.9));
+            border: 1px solid rgba(0, 255, 159, 0.2);
+            border-radius: 16px;
+            padding: 3rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 159, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .tech-card:hover::before {
+            opacity: 1;
+        }
+        
+        .tech-card:hover {
+            border-color: var(--color-cyber-green);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 255, 159, 0.3);
+        }
+        
+        .tech-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            filter: drop-shadow(0 0 15px rgba(0, 255, 159, 0.4));
+        }
+        
+        .tech-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--color-cyber-green);
+            margin-bottom: 1rem;
+        }
+        
+        .tech-card p {
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tech-features li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--color-text-secondary);
+        }
+        
+        .tech-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-cyber-green);
+            font-weight: bold;
+        }
+        
+        .process-section {
+            padding: var(--spacing-xl) 0;
+            background: var(--color-dark-bg);
+        }
+        
+        .process-timeline {
+            max-width: 900px;
+            margin: 3rem auto;
+            position: relative;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--color-cyber-green), var(--color-cyber-blue));
+            transform: translateX(-50%);
+        }
+        
+        .process-step {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+        
+        .process-step:nth-child(odd) .step-content {
+            margin-right: 55%;
+            text-align: right;
+        }
+        
+        .process-step:nth-child(even) .step-content {
+            margin-left: 55%;
+            text-align: left;
+        }
+        
+        .step-marker {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--color-cyber-green);
+            border: 4px solid var(--color-dark-bg);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 900;
+            color: var(--color-dark-bg);
+            box-shadow: 0 0 20px rgba(0, 255, 159, 0.6);
+        }
+        
+        .step-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+        }
+        
+        .step-content p {
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 968px) {
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-timeline::before {
+                left: 20px;
+            }
+            
+            .step-marker {
+                left: 20px;
+            }
+            
+            .process-step:nth-child(odd) .step-content,
+            .process-step:nth-child(even) .step-content {
+                margin-left: 70px;
+                margin-right: 0;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-ant">🐜</span>
+                <span class="logo-text">ANTFRASTRUCTURE</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="vision.html" class="nav-link">Vision</a>
+                <a href="technology.html" class="nav-link active">Technology</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="tech-hero">
+        <div class="container">
+            <div class="vision-content">
+                <h1 class="vision-title">The Technology</h1>
+                <p class="vision-intro">
+                    Interfacing with billions of years of evolution requires cutting-edge biotech, AI, and systems thinking.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Technologies -->
+    <section class="concept-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Core Stack</span>
+                <h2 class="section-title">How We Interface <br/>With Nature</h2>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">🔬</div>
+                    <h3>Pheromone Decoding</h3>
+                    <p>
+                        Using advanced chemical sensors and machine learning, we decode ant pheromone signals 
+                        to understand colony communication patterns in real-time.
+                    </p>
+                    <ul class="tech-features">
+                        <li>Gas chromatography-mass spectrometry sensors</li>
+                        <li>Neural networks for pattern recognition</li>
+                        <li>Real-time chemical signal analysis</li>
+                        <li>Species-specific protocol libraries</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">🤖</div>
+                    <h3>Swarm Intelligence AI</h3>
+                    <p>
+                        Our AI models replicate ant colony optimization algorithms, enabling us to solve complex 
+                        routing and resource allocation problems.
+                    </p>
+                    <ul class="tech-features">
+                        <li>Distributed decision-making systems</li>
+                        <li>Emergent behavior simulation</li>
+                        <li>Dynamic pathfinding optimization</li>
+                        <li>Self-organizing network protocols</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">📡</div>
+                    <h3>Bio-Signal Interface</h3>
+                    <p>
+                        Micro-sensors embedded in colony chambers allow us to monitor tunnel conditions, 
+                        traffic patterns, and infrastructure health.
+                    </p>
+                    <ul class="tech-features">
+                        <li>Non-invasive monitoring systems</li>
+                        <li>Vibration and acoustic sensors</li>
+                        <li>Temperature and humidity tracking</li>
+                        <li>Colony health diagnostics</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">🗺️</div>
+                    <h3>3D Tunnel Mapping</h3>
+                    <p>
+                        Ground-penetrating radar and acoustic imaging create detailed 3D models of underground 
+                        tunnel networks spanning miles.
+                    </p>
+                    <ul class="tech-features">
+                        <li>GPR scanning technology</li>
+                        <li>AI-powered structure recognition</li>
+                        <li>Real-time network topology mapping</li>
+                        <li>Structural integrity analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">🧬</div>
+                    <h3>Bioengineering</h3>
+                    <p>
+                        We study ant genetics and biomechanics to understand how they construct and maintain 
+                        infrastructure at scale.
+                    </p>
+                    <ul class="tech-features">
+                        <li>Colony genetics research</li>
+                        <li>Biomaterial analysis</li>
+                        <li>Construction behavior studies</li>
+                        <li>Adaptive architecture patterns</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">⚙️</div>
+                    <h3>Symbiotic Integration</h3>
+                    <p>
+                        Rather than disrupting colonies, we design systems that enhance and integrate with 
+                        existing ant infrastructure.
+                    </p>
+                    <ul class="tech-features">
+                        <li>Mutually beneficial protocols</li>
+                        <li>Ecosystem impact monitoring</li>
+                        <li>Adaptive integration layers</li>
+                        <li>Sustainability metrics tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Process</span>
+                <h2 class="section-title">From Research to Reality</h2>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-marker">1</div>
+                    <div class="step-content">
+                        <h3>Colony Identification</h3>
+                        <p>
+                            We use satellite imagery, ecological surveys, and ground-penetrating radar to identify 
+                            optimal colony locations with extensive tunnel networks.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-marker">2</div>
+                    <div class="step-content">
+                        <h3>Non-Invasive Mapping</h3>
+                        <p>
+                            Our sensors create detailed 3D maps of tunnel systems without disturbing the colony, 
+                            identifying key chambers and traffic patterns.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-marker">3</div>
+                    <div class="step-content">
+                        <h3>Communication Protocol Analysis</h3>
+                        <p>
+                            We decode the specific pheromone signals used by this colony, building a communication 
+                            library for two-way interaction.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-marker">4</div>
+                    <div class="step-content">
+                        <h3>Symbiotic Integration</h3>
+                        <p>
+                            Micro-sensors and interface nodes are carefully integrated into existing infrastructure, 
+                            enhancing rather than replacing natural systems.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-marker">5</div>
+                    <div class="step-content">
+                        <h3>Network Activation</h3>
+                        <p>
+                            The colony becomes a node in our global network, sharing data and resources while 
+                            maintaining full autonomy and health.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-marker">6</div>
+                    <div class="step-content">
+                        <h3>Continuous Monitoring</h3>
+                        <p>
+                            We monitor colony health, infrastructure integrity, and ecosystem impact to ensure 
+                            our presence benefits the entire system.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Want to Learn More?</h2>
+                <p>Read our latest research and developments in the blog.</p>
+                <div class="cta-buttons">
+                    <a href="blog.html" class="btn btn-primary">Read the Blog</a>
+                    <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-ant">🐜</span>
+                        <span>ANTFRASTRUCTURE</span>
+                    </div>
+                    <p>Harnessing billions of years of natural infrastructure for humanity's next chapter.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="vision.html">Vision</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="GitHub">gh</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Antfrastructure. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

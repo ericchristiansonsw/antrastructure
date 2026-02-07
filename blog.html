@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Antfrastructure</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .blog-hero {
+            padding: 150px 0 100px;
+            background: var(--color-dark-surface);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .blog-card {
+            background: linear-gradient(135deg, rgba(18, 25, 26, 0.8), rgba(26, 36, 37, 0.8));
+            border: 1px solid rgba(0, 255, 159, 0.15);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-cyber-green);
+            box-shadow: 0 15px 40px rgba(0, 255, 159, 0.2);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(0, 255, 159, 0.2), rgba(0, 212, 255, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            border-bottom: 1px solid rgba(0, 255, 159, 0.2);
+        }
+        
+        .blog-content {
+            padding: 2rem;
+        }
+        
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--color-text-tertiary);
+        }
+        
+        .blog-category {
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 255, 159, 0.1);
+            border: 1px solid var(--color-cyber-green);
+            border-radius: 50px;
+            color: var(--color-cyber-green);
+            font-weight: 600;
+        }
+        
+        .blog-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+        }
+        
+        .blog-excerpt {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            color: var(--color-cyber-green);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+        
+        .read-more:hover {
+            gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-ant">🐜</span>
+                <span class="logo-text">ANTFRASTRUCTURE</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="vision.html" class="nav-link">Vision</a>
+                <a href="technology.html" class="nav-link">Technology</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="vision-content">
+                <h1 class="vision-title">Research & Insights</h1>
+                <p class="vision-intro">
+                    Exploring the intersection of biology, technology, and sustainable infrastructure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Articles -->
+    <section class="concept-section">
+        <div class="container">
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">🌍</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Research</span>
+                            <span>Jan 15, 2026</span>
+                        </div>
+                        <h3>Mapping the Global Ant Network</h3>
+                        <p class="blog-excerpt">
+                            Our latest study reveals that leafcutter ant colonies in the Amazon have tunnel systems 
+                            extending over 50 square kilometers, with over 8 million chambers interconnected in ways 
+                            that optimize for both efficiency and redundancy.
+                        </p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">🔬</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Technology</span>
+                            <span>Jan 8, 2026</span>
+                        </div>
+                        <h3>Decoding Pheromone Protocols</h3>
+                        <p class="blog-excerpt">
+                            We've successfully identified and cataloged over 200 distinct pheromone signals used by 
+                            fire ant colonies for communication. This breakthrough allows us to "listen" to colony 
+                            decision-making in real-time.
+                        </p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">🤖</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">AI</span>
+                            <span>Dec 28, 2025</span>
+                        </div>
+                        <h3>Swarm Intelligence Algorithms</h3>
+                        <p class="blog-excerpt">
+                            By replicating ant colony optimization in machine learning models, we've achieved 
+                            pathfinding solutions 40% more efficient than traditional algorithms, with applications 
+                            in logistics and urban planning.
+                        </p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">♻️</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Sustainability</span>
+                            <span>Dec 15, 2025</span>
+                        </div>
+                        <h3>Circular Infrastructure Design</h3>
+                        <p class="blog-excerpt">
+                            Ant colonies achieve zero waste through perfect circular economy principles. Every piece 
+                            of organic matter is reused, recycled, or returned to the ecosystem. Here's what we can learn.
+                        </p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">🏗️</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Engineering</span>
+                            <span>Dec 1, 2025</span>
+                        </div>
+                        <h3>Self-Healing Infrastructure</h3>
+                        <p class="blog-excerpt">
+                            When a tunnel collapses, ant colonies repair it within hours using coordinated behavior 
+                            and biomaterials. Our research into this process could revolutionize how we maintain 
+                            human infrastructure.
+                        </p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">🧬</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Biology</span>
+                            <span>Nov 20, 2025</span>
+                        </div>
+                        <h3>The Genetics of Collective Intelligence</h3>
+                        <p class="blog-excerpt">
+                            New genomic analysis reveals how ant colonies encode complex behaviors across generations. 
+                            Understanding this genetic blueprint could inform how we design adaptive AI systems.
+                        </p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">📡</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Innovation</span>
+                            <span>Nov 5, 2025</span>
+                        </div>
+                        <h3>First Successful Colony Integration</h3>
+                        <p class="blog-excerpt">
+                            We've successfully integrated our sensor network with a harvester ant colony in Nevada. 
+                            The colony shows no signs of stress and our systems are collecting unprecedented data on 
+                            underground activity.
+                        </p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">🌱</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Impact</span>
+                            <span>Oct 18, 2025</span>
+                        </div>
+                        <h3>Ecosystem Benefits of Our Approach</h3>
+                        <p class="blog-excerpt">
+                            Unlike traditional infrastructure that disrupts ecosystems, our symbiotic approach has shown 
+                            measurable improvements in soil health, plant growth, and biodiversity in test areas.
+                        </p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">⚡</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Future</span>
+                            <span>Oct 1, 2025</span>
+                        </div>
+                        <h3>The Road Ahead: 2026 and Beyond</h3>
+                        <p class="blog-excerpt">
+                            Our roadmap for the next five years includes expanding to 50 integrated colonies globally, 
+                            developing commercial applications, and proving the viability of bio-integrated infrastructure 
+                            at scale.
+                        </p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Stay Updated</h2>
+                <p>Get the latest research and insights delivered to your inbox.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Subscribe to Newsletter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-ant">🐜</span>
+                        <span>ANTFRASTRUCTURE</span>
+                    </div>
+                    <p>Harnessing billions of years of natural infrastructure for humanity's next chapter.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="vision.html">Vision</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="GitHub">gh</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Antfrastructure. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

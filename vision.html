@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Vision - Antfrastructure</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .vision-hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, rgba(0, 255, 159, 0.05), rgba(0, 212, 255, 0.05));
+            position: relative;
+        }
+        
+        .vision-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-cyber-green), transparent);
+        }
+        
+        .vision-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .vision-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--color-cyber-green), var(--color-cyber-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .vision-intro {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--color-text-secondary);
+            margin-bottom: 3rem;
+        }
+        
+        .vision-section {
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .vision-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .vision-block:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .vision-block:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .vision-text h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-primary);
+        }
+        
+        .vision-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .vision-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(0, 255, 159, 0.1), rgba(0, 212, 255, 0.1));
+            border: 1px solid rgba(0, 255, 159, 0.3);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vision-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 255, 159, 0.03) 2px,
+                rgba(0, 255, 159, 0.03) 4px
+            );
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(40px); }
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .principle-card {
+            padding: 2.5rem;
+            background: rgba(18, 25, 26, 0.8);
+            border: 1px solid rgba(0, 255, 159, 0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .principle-card:hover {
+            border-color: var(--color-cyber-green);
+            transform: translateY(-5px);
+            box-shadow: var(--glow-green);
+        }
+        
+        .principle-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--color-cyber-green);
+            margin-bottom: 1rem;
+        }
+        
+        .principle-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 968px) {
+            .vision-block {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .vision-block:nth-child(even) {
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-ant">🐜</span>
+                <span class="logo-text">ANTFRASTRUCTURE</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="vision.html" class="nav-link active">Vision</a>
+                <a href="technology.html" class="nav-link">Technology</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="vision-hero">
+        <div class="container">
+            <div class="vision-content">
+                <h1 class="vision-title">Our Vision</h1>
+                <p class="vision-intro">
+                    For billions of years, ants have been building the most sophisticated infrastructure network on Earth. 
+                    We believe it's time humanity learned to work with nature instead of against it.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Sections -->
+    <section class="vision-section">
+        <div class="container">
+            <div class="vision-block">
+                <div class="vision-text">
+                    <h2>A Network Already Built</h2>
+                    <p>
+                        Beneath our feet lies an infrastructure that puts human engineering to shame. Ant colonies have 
+                        constructed tunnel systems that span continents, reaching depths of up to 25 feet and extending 
+                        for miles in every direction.
+                    </p>
+                    <p>
+                        These aren't simple burrows—they're sophisticated networks with dedicated chambers for food storage, 
+                        nurseries, waste management, and climate control. Each tunnel is precisely engineered for optimal 
+                        airflow and structural integrity.
+                    </p>
+                </div>
+                <div class="vision-image">
+                    🌐
+                </div>
+            </div>
+
+            <div class="vision-block">
+                <div class="vision-text">
+                    <h2>Collective Intelligence</h2>
+                    <p>
+                        Individual ants are simple creatures, but collectively they form a superintelligence capable of 
+                        solving complex problems. Through pheromone trails and tactile communication, they coordinate 
+                        actions across millions of individuals in real-time.
+                    </p>
+                    <p>
+                        This emergent intelligence has optimized pathfinding algorithms that rival our best AI, created 
+                        self-healing infrastructure, and maintained sustainable ecosystems for over 100 million years.
+                    </p>
+                </div>
+                <div class="vision-image">
+                    🧠
+                </div>
+            </div>
+
+            <div class="vision-block">
+                <div class="vision-text">
+                    <h2>Sustainable by Nature</h2>
+                    <p>
+                        While human infrastructure crumbles and requires constant maintenance, ant colonies are 
+                        self-repairing and adaptive. They respond to damage instantly, reroute around obstacles, 
+                        and evolve with their environment.
+                    </p>
+                    <p>
+                        They achieve this without fossil fuels, without concrete, without mining rare earth minerals. 
+                        Everything is renewable, biodegradable, and in perfect harmony with the ecosystem.
+                    </p>
+                </div>
+                <div class="vision-image">
+                    ♻️
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Principles -->
+    <section class="concept-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Core Principles</span>
+                <h2 class="section-title">What Guides Us</h2>
+            </div>
+            
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-number">01</div>
+                    <h3>Work With Nature</h3>
+                    <p>
+                        We believe the best technology already exists in nature. Our role is to interface with it, 
+                        not replace it.
+                    </p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-number">02</div>
+                    <h3>Think in Networks</h3>
+                    <p>
+                        Individual components are weak. Networks are unstoppable. We design for collective intelligence 
+                        and emergent behavior.
+                    </p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-number">03</div>
+                    <h3>Embrace Adaptation</h3>
+                    <p>
+                        Static systems fail. Living systems evolve. We build infrastructure that learns and adapts 
+                        to changing conditions.
+                    </p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-number">04</div>
+                    <h3>Scale Exponentially</h3>
+                    <p>
+                        From a single colony to a global network. We think in terms of exponential growth and 
+                        decentralized control.
+                    </p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-number">05</div>
+                    <h3>Zero Waste</h3>
+                    <p>
+                        In nature, waste doesn't exist—everything is a resource. We apply circular economy principles 
+                        at every level.
+                    </p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-number">06</div>
+                    <h3>Respect the System</h3>
+                    <p>
+                        We're not conquering nature—we're joining it. Our technology must benefit the entire ecosystem, 
+                        not just humanity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Dig Deeper?</h2>
+                <p>Explore how we're turning this vision into reality through cutting-edge biotech and AI.</p>
+                <div class="cta-buttons">
+                    <a href="technology.html" class="btn btn-primary">See the Technology</a>
+                    <a href="blog.html" class="btn btn-secondary">Read Our Research</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-ant">🐜</span>
+                        <span>ANTFRASTRUCTURE</span>
+                    </div>
+                    <p>Harnessing billions of years of natural infrastructure for humanity's next chapter.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="vision.html">Vision</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="GitHub">gh</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Antfrastructure. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

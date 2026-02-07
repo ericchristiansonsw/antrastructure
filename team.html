@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - Antfrastructure</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .team-hero {
+            padding: 150px 0 100px;
+            background: var(--color-dark-surface);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .team-card {
+            text-align: center;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(18, 25, 26, 0.8), rgba(26, 36, 37, 0.8));
+            border: 1px solid rgba(0, 255, 159, 0.15);
+            border-radius: 16px;
+            transition: all 0.4s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-cyber-green);
+            box-shadow: 0 15px 40px rgba(0, 255, 159, 0.2);
+        }
+        
+        .team-avatar {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--color-cyber-green), var(--color-cyber-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 255, 159, 0.3);
+        }
+        
+        .team-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-primary);
+        }
+        
+        .team-role {
+            color: var(--color-cyber-green);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .team-bio {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .team-social {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 255, 159, 0.1);
+            border: 1px solid var(--color-cyber-green);
+            border-radius: 8px;
+            color: var(--color-cyber-green);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            background: var(--color-cyber-green);
+            color: var(--color-dark-bg);
+            transform: translateY(-3px);
+        }
+        
+        .values-section {
+            padding: var(--spacing-xl) 0;
+            background: var(--color-dark-bg);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .value-item h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--color-cyber-green);
+            margin-bottom: 0.8rem;
+        }
+        
+        .value-item p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-ant">🐜</span>
+                <span class="logo-text">ANTFRASTRUCTURE</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="vision.html" class="nav-link">Vision</a>
+                <a href="technology.html" class="nav-link">Technology</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="team.html" class="nav-link active">Team</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="team-hero">
+        <div class="container">
+            <div class="vision-content">
+                <h1 class="vision-title">The Team</h1>
+                <p class="vision-intro">
+                    A diverse group of scientists, engineers, and visionaries working to reimagine infrastructure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members -->
+    <section class="concept-section">
+        <div class="container">
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">👤</div>
+                    <h3>Your Name</h3>
+                    <div class="team-role">Co-Founder & Vision Lead</div>
+                    <p class="team-bio">
+                        Passionate about biomimicry and sustainable technology. Background in systems thinking 
+                        and ecological design. Believes nature has already solved our hardest problems.
+                    </p>
+                    <div class="team-social">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="GitHub">gh</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">👤</div>
+                    <h3>Team Member 2</h3>
+                    <div class="team-role">Co-Founder & Technology Lead</div>
+                    <p class="team-bio">
+                        Expert in AI and machine learning with a focus on swarm intelligence algorithms. 
+                        Previously worked on distributed systems and optimization problems at scale.
+                    </p>
+                    <div class="team-social">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="GitHub">gh</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">👤</div>
+                    <h3>Team Member 3</h3>
+                    <div class="team-role">Lead Biologist</div>
+                    <p class="team-bio">
+                        PhD in Myrmecology (the study of ants) with 10+ years researching colony behavior 
+                        and communication. Published extensively on pheromone signaling and collective intelligence.
+                    </p>
+                    <div class="team-social">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">👤</div>
+                    <h3>Team Member 4</h3>
+                    <div class="team-role">Hardware Engineer</div>
+                    <p class="team-bio">
+                        Specializes in sensor design and non-invasive monitoring systems. Previously developed 
+                        environmental monitoring tech for conservation projects worldwide.
+                    </p>
+                    <div class="team-social">
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="GitHub">gh</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">👤</div>
+                    <h3>Team Member 5</h3>
+                    <div class="team-role">Data Scientist</div>
+                    <p class="team-bio">
+                        Expert in analyzing complex biological systems using machine learning. Builds models 
+                        that help us decode and predict colony behavior patterns.
+                    </p>
+                    <div class="team-social">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="GitHub">gh</a>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">👤</div>
+                    <h3>Team Member 6</h3>
+                    <div class="team-role">Sustainability Advisor</div>
+                    <p class="team-bio">
+                        Environmental scientist focused on ensuring our work benefits entire ecosystems. 
+                        Monitors impact and guides ethical integration with natural systems.
+                    </p>
+                    <div class="team-social">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Values -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Values</span>
+                <h2 class="section-title">What Drives Us</h2>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">🌱</div>
+                    <h3>Ecosystem First</h3>
+                    <p>
+                        Every decision is evaluated based on its impact on the entire ecosystem, not just human benefit.
+                    </p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">🔬</div>
+                    <h3>Scientific Rigor</h3>
+                    <p>
+                        We ground our work in peer-reviewed research and maintain the highest standards of scientific integrity.
+                    </p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <h3>Open Collaboration</h3>
+                    <p>
+                        Our research is open-source. Solving global challenges requires global collaboration.
+                    </p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">💡</div>
+                    <h3>Bold Innovation</h3>
+                    <p>
+                        We're not afraid to challenge conventional thinking and explore radical new approaches.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Our Mission</h2>
+                <p>We're looking for passionate individuals to help build the future of infrastructure.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-ant">🐜</span>
+                        <span>ANTFRASTRUCTURE</span>
+                    </div>
+                    <p>Harnessing billions of years of natural infrastructure for humanity's next chapter.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="vision.html">Vision</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="GitHub">gh</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Antfrastructure. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
