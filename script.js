@@ -72,21 +72,37 @@ if (statsSection) {
 class NetworkBackground {
     constructor(canvasId) {
         this.canvas = document.getElementById(canvasId);
-        if (!this.canvas) return;
+        if (!this.canvas) {
+            console.error('Canvas element not found:', canvasId);
+            return;
+        }
         
         this.ctx = this.canvas.getContext('2d');
         this.nodes = [];
         this.connections = [];
+        
+        // Ensure canvas has proper dimensions
         this.resize();
-        this.init();
-        this.animate();
+        
+        // If canvas still has no size, wait and try again
+        if (this.canvas.width === 0 || this.canvas.height === 0) {
+            setTimeout(() => {
+                this.resize();
+                this.init();
+                this.animate();
+            }, 100);
+        } else {
+            this.init();
+            this.animate();
+        }
         
         window.addEventListener('resize', () => this.resize());
     }
     
     resize() {
-        this.canvas.width = this.canvas.offsetWidth;
-        this.canvas.height = this.canvas.offsetHeight;
+        const parent = this.canvas.parentElement;
+        this.canvas.width = this.canvas.offsetWidth || parent.offsetWidth;
+        this.canvas.height = this.canvas.offsetHeight || parent.offsetHeight;
     }
     
     init() {
